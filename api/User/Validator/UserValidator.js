@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-UserValidator = {
+const UserValidator = {
     userCreateValidator: (body) => {
         const schema = Joi.object().keys({
             password: Joi.string().required().min(6),
