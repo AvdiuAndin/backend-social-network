@@ -1,28 +1,28 @@
 #Backend application
 This application has the following endpoints:
 
-    **/signup**
+**/signup**
 Sign up to the system (username, password)
 
-    **/login**
+**/login**
 Logs in an existing user with a password  
 
-    **/me**
+**/me**
 Get the currently logged in user information  
 
-    **/me/update-password**
+**/me/update-password**
 Update the current users password
 
-    **/user/:id/**
+**/user/:id/**
 List username & number of likes of a user
   
-    **/user/:id/like**
+**/user/:id/like**
 Like a user  
 
-    **/user/:id/unlike**   
+**/user/:id/unlike**   
 Un-Like a user  
 
-    **/most-liked**  
+**/most-liked**  
 List users in a most liked to least liked 
 
 Each user can like another only once, and they can unlike each other.  
