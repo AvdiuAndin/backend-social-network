@@ -1,5 +1,6 @@
 'use strict';
-let bookshelf = require('../../../config/database/Bookshelf');
+require('module-alias/register');
+let bookshelf = require('@bookshelf');
 const knex = bookshelf.knex;
 
 
@@ -81,9 +82,9 @@ const UserService = {
 
 
     getMostLikedUsers: async() =>{
-        return knex("user_likes").groupBy('user.id',"username").count("*", {as: 'likedBy'})
+        return knex("user_likes").groupBy('user.id',"username").count("*", {as: 'numberOfLikes'})
             .innerJoin('users as user', 'user_likes.liked_user_id','=','user.id')
-            .select("user.id", "username").orderBy('likedBy','desc');
+            .select("user.id", "username").orderBy('numberOfLikes','desc');
     }
 };
 
